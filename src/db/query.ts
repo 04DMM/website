@@ -10,7 +10,7 @@ let dialect: Dialect;
 
 if (Environment.DB_BACKEND === 'sqlite') {
     dialect = new SqliteDialect({
-        database: async () => new Database('db.sqlite')
+        database: async () => new Database('../244Server/engine/db.sqlite')
     });
 } else {
     dialect = new MysqlDialect({

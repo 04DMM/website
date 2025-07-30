@@ -2,13 +2,13 @@
 <%- include('./_components/frame-top.ejs'); %>
 <%- include('./_components/content-start.ejs'); %>
 
-<img src=/img/title/rslogo.gif width=312 height=100>
+<img src=/img/title/rslogo.gif width=250 height=150>
 
 <table width=400>
   <tr>
     <td>
       <center>
-        <span style="font-size:14px; color:white;">There <%= playerCount != 1 ? 'are' : 'is' %> currently <%= playerCount %> <%= playerCount != 1 ? 'people' : 'person' %> playing!</span>
+        <span style="font-size:14px; color:white;">Tournament status: LIVE</span>
       </center>
     </td>
   </tr>
@@ -51,59 +51,43 @@ To view a full list of news and updates, click <a href="/news" class=c>here</a>.
 <%- include('./_components/stones-border-top.ejs'); %>
 <%- include('./_components/stones-content-start.ejs'); %>
 <%- include('./_components/options-start.ejs'); %>
-<td width=100 align=center><a href='/detail'><img src=/img/title/mm_sword.jpg border=0></a></td>
-<td width=120>
-  <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: relative;">
-    <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: absolute;">
-      <a href='/detail'><img src=/img/title/blank.gif width=100 height=45 border=0></a>
-    </div>
-  </div>
-  <table width=100 height=45 bgcolor=black cellpadding=2><tr><td class=b2 bgcolor=#570700 background=/img/title/shinystonered.jpg><center><b>Play<br>Game</b></center></td></tr></table>
-  Play 2004Scape right now!<br>
-  <a href='/detail' class=c>Click here</a>
-</td>
+<table width="100%" style="text-align: center;">
+  <tr>
+    <!-- Play Now block -->
+    <td style="vertical-align: middle; padding: 10px;">
+      <a href="/detail">
+        <img src="/img/title/sword-new.jpg" width="120" height="120" border="0" alt="Play Now">
+      </a>
+      <br>
+      <a href="/detail" style="display: inline-block; width: 100px; background: #570700 url('/img/title/shinystonered.jpg') repeat; color: white; font-weight: bold; padding: 10px 0; text-decoration: none;">
+        Play<br>Now
+      </a>
+    </td>
 
-<td width=10></td>
-<td width=100 align=center><a href='/create?reset'><img src=/img/title/mm_player.jpg border=0></a></td>
-<td width=120>
-  <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: relative;">
-    <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: absolute;">
-      <a href='/create?reset'><img src=/img/title/blank.gif width=100 height=45 border=0></a>
-    </div>
-  </div>
-  <table width=100 bgcolor=black cellpadding=2><tr><td class=b2 bgcolor=#570700 background=/img/title/shinystonered.jpg><center><b>Create Account</b></center></td></tr></table>
-  Create an account for both the game and our website.<br>
-  <a href='/create?reset' class=c>Click Here</a>
-</td>
+    <!-- Hiscores Table block -->
+    <td style="vertical-align: middle; padding: 10px;">
+      <a href="/hiscores">
+        <img src="/img/title/mm_chalice.jpg" width="77" height="120" border="0" alt="Hiscores Table">
+      </a>
+      <br>
+      <a href="/hiscores" style="display: inline-block; width: 100px; background: #474747 url('/img/stoneback.gif') repeat; color: white; font-weight: bold; padding: 10px 0; text-decoration: none;">
+        Hiscores<br>Table
+      </a>
+    </td>
 
-<%- include('./_components/options-continue.ejs'); %>
-
-<td width=100 align=center><a href='/hiscores'><img src='/img/title/mm_chalice.jpg' width=77 height=120 border=0></a></td>
-<td width=120>
-  <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: relative;">
-    <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: absolute;">
-      <a href='/hiscores'><img src=/img/title/blank.gif width=100 height=45 border=0></a>
-    </div>
-  </div>
-  <table width=100 height=45 bgcolor=black cellpadding=2><tr><td class=b bgcolor=#474747 background=/img/stoneback.gif><center><b>Hiscores Table</b></center></td></tr></table>
-  Is your character in the top 250,000?<br>
-  <a href='/hiscores' class=c>Click Here</a>
-</td>
-
-<td></td>
-<td width=100 align=center><a href='https://github.com/2004Scape/Server'><img src=/img/title/mm2_rs2b.jpg border=0></a></td>
-<td width=120>
-  <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: relative;">
-    <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: absolute;">
-      <a href='https://github.com/2004Scape/Server'><img src=/img/title/blank.gif width=100 height=45 border=0></a>
-    </div>
-  </div>
-  <table width=100 height=45 bgcolor=black cellpadding=2><tr><td class=b bgcolor=#474747 background=/img/stoneback.gif><center><b>Source Code</b></center></td></tr></table>
-  Download our source code.<br>
-  <a href='https://github.com/2004Scape/Server' class=c>Click Here</a>
-</td>
+    <!-- Source Code block -->
+    <td style="vertical-align: middle; padding: 10px;">
+      <a href="https://github.com/04DMM/04dmm/wiki">
+        <img src="/img/title/mm2_rs2b.jpg" border="0" alt="Source Code" style="max-height: 120px;">
+      </a>
+      <br>
+      <a href="https://github.com/04DMM/04dmm/wiki" style="display: inline-block; width: 100px; background: #474747 url('/img/stoneback.gif') repeat; color: white; font-weight: bold; padding: 10px 0; text-decoration: none;">
+        Game<br>Wiki
+      </a>
+    </td>
+  </tr>
+</table>
 <%- include('./_components/options-end.ejs'); %>
-<%- include('./_components/stones-content-end.ejs'); %>
 <%- include('./_components/stones-border-bottom.ejs'); %>
 
 <br>
@@ -111,59 +95,34 @@ To view a full list of news and updates, click <a href="/news" class=c>here</a>.
 <%- include('./_components/stones-border-top.ejs'); %>
 <%- include('./_components/stones-content-start.ejs'); %>
 <%- include('./_components/options-start.ejs'); %>
-<td width=100 align=center><a href='/account'><div width=77 height=120 border=0></div></a></td>
-<td width=120>
-  <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: relative;">
-    <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: absolute;">
-      <a href='/account'><img src=/img/title/blank.gif width=100 height=45 border=0></a>
-    </div>
-  </div>
-  <table width=100 height=45 bgcolor=black cellpadding=2><tr><td class=b bgcolor=#474747 background=/img/stoneback.gif><center><b>Security Centre</b></center></td></tr></table>
-  Manage your account security.<br>
-  <a href='/account' class=c>Click Here</a>
-</td>
 
-<td></td>
-<td width=100 align=center><a href='/guide'><div width=77 height=120 border=0></div></a></td>
-<td width=120>
-  <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: relative;">
-    <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: absolute;">
-      <a href='/guide'><img src=/img/title/blank.gif width=100 height=45 border=0></a>
-    </div>
-  </div>
-  <table width=100 height=45 bgcolor=black cellpadding=2><tr><td class=b bgcolor=#474747 background=/img/stoneback.gif><center><b>Rules</b></center></td></tr></table>
-  Inform yourself on how to play safely.<br>
-  <a href='/guide' class=c>Click Here</a>
-</td>
 
-<%- include('./_components/options-continue.ejs'); %>
-<td width=100 align=center><a href='https://discord.lostcity.rs'><img src='/img/title/mm_discord.jpg' width=77 height=120 border=0></a></td>
-<td width=120>
-  <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: relative;">
-    <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: absolute;">
-      <a href='https://discord.lostcity.rs'><img src=/img/title/blank.gif width=100 height=45 border=0></a>
-    </div>
-  </div>
-  <table width=100 height=45 bgcolor=black cellpadding=2><tr><td class=b bgcolor=#474747 background=/img/stoneback.gif><center><b>Discord</b></center></td></tr></table>
-  Discuss the game with fellow players!<br>
-  <a href='https://discord.lostcity.rs' class=c>Click Here</a>
-</td>
+<table>
+  <tr>
+    <!-- Discord image cell -->
+    <td valign="middle" align="center">
+      <a href="https://discord.gg/jT9SGcjH6r">
+        <img src="/img/title/discord-new.gif" width="127" height="120" border="0" alt="Discord">
+      </a>
+    </td>
 
-<td></td>
-<td width=100 align=center><a href='https://lostcity.rs'><img src=/img/title/mm_forums.jpg border=0></a></td>
-<td width=120>
-  <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: relative;">
-    <DIV STYLE="LEFT: 0px; TOP: 0px; POSITION: absolute;">
-      <a href='https://lostcity.rs'><img src=/img/title/blank.gif width=100 height=45 border=0></a>
-    </div>
-  </div>
-  <table width=100 height=45 bgcolor=black cellpadding=2><tr><td class=b bgcolor=#474747 background=/img/stoneback.gif><center><b>Forums</b></center></td></tr></table>
-  Discuss the game with fellow players!<br>
-  <a href='https://lostcity.rs' class=c>Click Here</a>
+    <!-- Text block cell -->
+    <td valign="middle" align="left" style="padding-left: 10px;">
+      <table width="100" height="45" bgcolor="black" cellpadding="2" style="margin-bottom: 5px;">
+        <tr>
+<td class="b" bgcolor="#474747" background="/img/stoneback.gif" style="text-align: center;">
+  <a href="https://discord.gg/jT9SGcjH6r" style="color: inherit; text-decoration: none;">
+    <b>Discord</b>
+  </a>
 </td>
-<%- include('./_components/options-end.ejs'); %>
+        </tr>
+      </table>
+      Join the community!<br>
+    </td>
+  </tr>
+</table>
 <%- include('./_components/stones-content-end.ejs'); %>
 <%- include('./_components/stones-border-bottom.ejs'); %>
 
-<%- include('./_components/content-end.ejs'); %>
-<%- include('./_partial/footer.ejs'); %>
+
+
