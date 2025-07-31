@@ -52,6 +52,7 @@ function numberWithCommas(x: number) {
 export default function (f: any, opts: any, next: any) {
     f.get('/', async (req: any, res: any) => {
         const profile = resolveSelectedProfile(req);
+        console.log('Selected profile:', profile.id);
 
         let category = categories.find(c => c.id == req.query.category);
         if (typeof category === 'undefined') {
