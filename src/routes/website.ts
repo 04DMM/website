@@ -20,10 +20,21 @@ export default async function (app: FastifyInstance) {
             playerCount += world.players;
         }
 
-        const latestNews = Environment.DB_HOST ? await db.selectFrom('newspost').orderBy('id', 'desc').limit(5).selectAll().execute() : [];
+        const latestNews = await db
+  .selectFrom('newspost')
+  .orderBy('id', 'desc')
+  .limit(5)
+  .selectAll()
+  .execute();
+  
+  const newsposts = latestNews.map(post => ({
+  ...post,
+  created: new Date(post.created) // Ensure correct date format
+}));
+
         return reply.view('title', {
             playerCount,
-            newsposts: latestNews
+            newsposts: newsposts
         });
     });
 

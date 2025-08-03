@@ -63,15 +63,24 @@ export default function (f: any, opts: any, next: any) {
             newsposts = newsposts.offset((page - 1) * 17);
         }
 
-        newsposts = newsposts.limit(17);
+newsposts = newsposts.limit(17);
 
-        return res.view('news/index', {
-            category,
-            page,
-            more,
-            categories,
-            newsposts: await newsposts.selectAll().execute()
-        });
+const rawPosts = await newsposts.selectAll().execute();
+
+// Convert 'created' string to Date object
+const posts = rawPosts.map(post => ({
+    ...post,
+    created: new Date(post.created)
+}));
+
+
+return res.view('news/index', {
+    category,
+    page,
+    more,
+    categories,
+    newsposts: posts
+});
     });
 
     f.get('/:id', async (req: any, res: any) => {
